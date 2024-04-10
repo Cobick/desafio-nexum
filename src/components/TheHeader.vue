@@ -5,7 +5,7 @@
       </div>
       <div>
         <form class="pesquisar">
-        <input type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+        <input class="campo" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
         <button type="submit">Pesquisar</button>
         </form>
       </div>
@@ -29,8 +29,12 @@
 }
 
 form {
-  border: 3px solid rgb(255, 140, 0);
   float: right;
+}
+
+.campo {
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
 button {

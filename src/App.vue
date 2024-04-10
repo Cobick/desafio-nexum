@@ -1,19 +1,19 @@
 <template>
 
   <TheHeader />
-  <TheBoard />
+  <TheBoards />
   
 </template>
 
 <script>
 import TheHeader from './components/TheHeader.vue';
-import TheBoard from './components/TheBoard.vue';
+import TheBoards from './components/TheBoards.vue';
 
 export default {
   name: 'App',
   components: {
     TheHeader,
-    TheBoard
+    TheBoards
   }
 }
 
