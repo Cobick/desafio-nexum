@@ -1,5 +1,7 @@
 # desafio-nexum
 
+Desafio de criar um Kanban Board utilizando Vue.js
+
 ## Project setup
 ```
 npm install
