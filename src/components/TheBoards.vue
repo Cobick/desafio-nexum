@@ -54,6 +54,7 @@ export default {
   border: 1px solid rgb(255, 140, 0);
   padding: 100px;
   margin: 10px;
+  height: 850px;
 }
 
 .board li {
