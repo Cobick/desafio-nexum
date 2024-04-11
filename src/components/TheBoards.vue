@@ -63,6 +63,5 @@ export default {
 
 button {
   margin: 8px;
-  margin-left: 32px;
 }
 </style>
