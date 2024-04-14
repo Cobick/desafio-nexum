@@ -7,12 +7,14 @@
           <div class="card-header">
             <h3>Fazer</h3>
           </div>
+
           <ul class="list-group list-group-flush">
             <li class="list-group-item" v-for="(item, index) in board1" :key="index">
               {{ item }}
               <button class="btn btn-danger btn-sm float-right" @click="deleteItem(1, index)">X</button>
             </li>
           </ul>
+
           <div class="card-footer">
             <input type="text" class="form-control" v-model="newItem1" placeholder="Nova Tarefa">
             <button class="btn btn-primary mt-2" @click="addItem(1)">Adicionar</button>
@@ -25,12 +27,14 @@
           <div class="card-header">
             <h3>Fazendo</h3>
           </div>
+
           <ul class="list-group list-group-flush">
             <li class="list-group-item" v-for="(item, index) in board2" :key="index">
               {{ item }}
               <button class="btn btn-danger btn-sm float-right" @click="deleteItem(2, index)">X</button>
             </li>
           </ul>
+
           <div class="card-footer">
             <input type="text" class="form-control" v-model="newItem2" placeholder="Nova Tarefa">
             <button class="btn btn-primary mt-2" @click="addItem(2)">Adicionar</button>
@@ -43,12 +47,14 @@
           <div class="card-header">
             <h3>Feito</h3>
           </div>
+
           <ul class="list-group list-group-flush">
             <li class="list-group-item" v-for="(item, index) in board3" :key="index">
               {{ item }}
               <button class="btn btn-danger btn-sm float-right" @click="deleteItem(3, index)">X</button>
             </li>
           </ul>
+
           <div class="card-footer">
             <input type="text" class="form-control" v-model="newItem3" placeholder="Nova Tarefa">
             <button class="btn btn-primary mt-2" @click="addItem(3)">Adicionar</button>
