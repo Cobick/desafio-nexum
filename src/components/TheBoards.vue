@@ -1,18 +1,60 @@
 <template>
-  <div class="boards container">
-    <div class="board" v-for="(board, index) in boards" :key="index">
-      <h3>{{ board.title }}</h3>
-        <form @submit.prevent="addTask(index)">
-          <label for="TaskInput">Nova Tarefa:</label>
-            <input type="text" v-model="newTask" id="TaskInput" required>
-          <button type="submit">Adicionar Tarefa</button>
-        </form>
-      <ul>
-        <li v-for="(task, taskIndex) in board.tasks" :key="taskIndex">
-          {{ task }}
-          <button @click="removeTask(index, taskIndex)">Remover</button>
-        </li>
-      </ul>
+  <div class="container">
+    <div class="row">
+      <!-- Board 1 -->
+      <div class="col-sm-4">
+        <div class="card custom-board">
+          <div class="card-header">
+            <h3>Fazer</h3>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" v-for="(item, index) in board1" :key="index">
+              {{ item }}
+              <button class="btn btn-danger btn-sm float-right" @click="deleteItem(1, index)">X</button>
+            </li>
+          </ul>
+          <div class="card-footer">
+            <input type="text" class="form-control" v-model="newItem1" placeholder="Nova Tarefa">
+            <button class="btn btn-primary mt-2" @click="addItem(1)">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <!-- Board 2 -->
+      <div class="col-sm-4">
+        <div class="card custom-board">
+          <div class="card-header">
+            <h3>Fazendo</h3>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" v-for="(item, index) in board2" :key="index">
+              {{ item }}
+              <button class="btn btn-danger btn-sm float-right" @click="deleteItem(2, index)">X</button>
+            </li>
+          </ul>
+          <div class="card-footer">
+            <input type="text" class="form-control" v-model="newItem2" placeholder="Nova Tarefa">
+            <button class="btn btn-primary mt-2" @click="addItem(2)">Adicionar</button>
+          </div>
+        </div>
+      </div>
+      <!-- Board 3 -->
+      <div class="col-sm-4">
+        <div class="card custom-board">
+          <div class="card-header">
+            <h3>Feito</h3>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item" v-for="(item, index) in board3" :key="index">
+              {{ item }}
+              <button class="btn btn-danger btn-sm float-right" @click="deleteItem(3, index)">X</button>
+            </li>
+          </ul>
+          <div class="card-footer">
+            <input type="text" class="form-control" v-model="newItem3" placeholder="Nova Tarefa">
+            <button class="btn btn-primary mt-2" @click="addItem(3)">Adicionar</button>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -21,47 +63,55 @@
 export default {
   data() {
     return {
-      boards: [
-        { title: 'Para Fazer', tasks: [] },
-        { title: 'Fazendo', tasks: [] },
-        { title: 'Feito', tasks: [] }
-      ],
-      newTask: ''
+      newItem1: '',
+      newItem2: '',
+      newItem3: '',
+      board1: ['Estudar'],
+      board2: ['Trabalhar'],
+      board3: ['Correr']
     };
   },
   methods: {
-    addTask(index) {
-      if (this.newTask.trim() !== '') {
-        this.boards[index].tasks.push(this.newTask);
-        this.newTask = '';
+    addItem(boardIndex) {
+      if (boardIndex === 1 && this.newItem1.trim() !== '') {
+        this.board1.push(this.newItem1);
+        this.newItem1 = '';
+      } else if (boardIndex === 2 && this.newItem2.trim() !== '') {
+        this.board2.push(this.newItem2);
+        this.newItem2 = '';
+      } else if (boardIndex === 3 && this.newItem3.trim() !== '') {
+        this.board3.push(this.newItem3);
+        this.newItem3 = '';
       }
     },
-    removeTask(boardIndex, taskIndex) {
-      this.boards[boardIndex].tasks.splice(taskIndex, 1);
+    deleteItem(boardIndex, itemIndex) {
+      if (boardIndex === 1) {
+        this.board1.splice(itemIndex, 1);
+      } else if (boardIndex === 2) {
+        this.board2.splice(itemIndex, 1);
+      } else if (boardIndex === 3) {
+        this.board3.splice(itemIndex, 1);
+      }
     }
   }
 };
 </script>
 
 <style scoped>
-.boards {
-  display: flex;
-  justify-content: space-around;
+.custom-board {
+  margin-bottom: 20px;
+  height: 800px;
+  border: 2px solid rgb(255, 140, 0);
 }
 
-.board {
-  flex: 1;
-  border: 1px solid rgb(255, 140, 0);
-  padding: 100px;
-  margin: 10px;
-  height: 850px;
+.btn {
+  background-color: rgb(255, 140, 0);
 }
 
-.board li {
-  list-style-type: none;
-}
-
-button {
-  margin: 8px;
+.card-header h3 {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
 }
 </style>

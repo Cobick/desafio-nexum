@@ -6,14 +6,14 @@
       <div>
         <form class="pesquisar">
         <input class="campo" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-        <button type="submit">Pesquisar</button>
+        <button class="btn btn-primary" type="submit">Pesquisar</button>
         </form>
       </div>
     </nav>
 </template>
 
 
-<script>
+<script scoped>
  export default {
     name: 'TheHeader'
   }
@@ -37,11 +37,11 @@ form {
 .campo {
   border-radius: 5px;
   margin-right: 10px;
+  padding: 2px;
+  border: 2px solid rgb(255, 140, 0);
 }
 
-button {
-  color: black;
-  font-weight: 600;
+.pesquisar button {
   background-color: rgb(255, 140, 0);
 }
 
