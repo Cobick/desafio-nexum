@@ -1,11 +1,13 @@
 <template>
-  <div class="container">
-    <div class="row">
+  <!-- Classes do bootstrap para criar o container responsivo -->
+  <div class="container"> 
+    <div class="row"> 
+      
       <!-- Board 1 -->
       <div class="col-sm-4">
         <div class="card custom-board">
           <div class="card-header">
-            <h3>Fazer</h3>
+            <h3>A Fazer</h3>
           </div>
 
           <ul class="list-group list-group-flush">
@@ -21,11 +23,12 @@
           </div>
         </div>
       </div>
+
       <!-- Board 2 -->
       <div class="col-sm-4">
         <div class="card custom-board">
           <div class="card-header">
-            <h3>Fazendo</h3>
+            <h3>Em Progresso</h3>
           </div>
 
           <ul class="list-group list-group-flush">
@@ -41,11 +44,12 @@
           </div>
         </div>
       </div>
+
       <!-- Board 3 -->
       <div class="col-sm-4">
         <div class="card custom-board">
           <div class="card-header">
-            <h3>Feito</h3>
+            <h3>Concluído</h3>
           </div>
 
           <ul class="list-group list-group-flush">
